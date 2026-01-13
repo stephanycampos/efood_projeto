@@ -1,40 +1,41 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
 
-export const FooterContainer = styled.footer`
-  background-color: ${cores.secundaria};
-  color: ${cores.principal};
-  height: 298px;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+import colors from '../../styles/colors'
 
-  img {
-    margin-top: 38px;
-    margin-bottom: 0;
-  }
-
-  .social {
-    display: flex;
-    gap: 8px;
-    height: 24px;
-    margin-top: -60px;
-
-    img {
-      margin: 0;
-    }
-  }
-
-  p {
-    font-size: 10px;
-    max-width: 480px;
+export const Container = styled.div`
+    background-color: ${colors.white};
+    padding: 40px 0;
+    text-align: center;
     width: 100%;
-    margin-bottom: 38px;
-    @media screen and (max-width: 480px) {
-      max-width: 350px;
+    flex-shrink: 0;
+`
+
+export const FooterSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .social {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        padding-top: 32px;
     }
-  }
+    
+    p {
+        max-width: 480px;
+        font-size: 10px;
+        padding-top: 80px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 0 16px;
+
+        p {
+            font-size: 14px;
+            text-align: justify;
+            padding-top: 40px;
+        }
+    }
 `

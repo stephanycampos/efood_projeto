@@ -1,12 +1,18 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
 
-export const TagId = styled.div`
-  background-color: ${cores.principal};
-  color: ${cores.secundaria};
-  font-size: 12px;
-  font-weight: 700;
-  padding: 8px 16px;
-  display: inline-block;
-  border-radius: 2px;
+import colors from '../../styles/colors'
+
+export const TagContainer = styled.div`
+    background-color: ${colors.rose};
+    color: ${colors.white};
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 6px;
+    display: flex;
+    gap: 8px;
+    text-transform: capitalize;
+
+    @media (max-width: 767px) {
+        font-size: 1em;
+    }
 `

@@ -1,27 +1,20 @@
-import { useEffect, useState } from 'react'
-import Footer from '../../components/Footer'
-import Header from '../../components/HeaderHome'
-import Restaurantes from '../../components/Restaurantes'
-import { Restaurante } from '../../types'
+import { useGetOnRestaurantsQuery } from "../../services/api"
+
+import RestaurantList from "../../components/RestaurantList"
+import Loader from "../../components/Loader"
 
 const Home = () => {
-  const [restaurantes, setRestaurantes] = useState<Restaurante[]>([])
+    const { data: restaurantes, isLoading } = useGetOnRestaurantsQuery()
 
-  useEffect(() => {
-    fetch('https://ebac-fake-api.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res: Restaurante[]) => {
-        setRestaurantes(res)
-      })
-  }, [])
+    if(!restaurantes) {
+        return <Loader />
+    }
 
-  return (
-    <>
-      <Header />
-      <Restaurantes restaurantes={restaurantes} />
-      <Footer />
-    </>
-  )
+    return(
+        <>
+            <RestaurantList isLoading={isLoading} restaurants={restaurantes} />
+        </>
+    )
 }
 
 export default Home
