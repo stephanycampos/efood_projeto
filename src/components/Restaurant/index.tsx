@@ -1,36 +1,53 @@
-import Tag from "../Tag"
-
+import Tag from '../Tag'
 import starIcon from '../../assets/images/estrela.png'
+import * as S from './styles'
 
-import * as S from "./styles"
+type Props = {
+  restaurant: Restaurants
+}
 
-const Restaurant = ({ image, title, nota, description, star, infos, about, id }: CardRestaurantProps) => (
+const Restaurant = ({ restaurant }: Props) => {
+  const {
+    id,
+    titulo,
+    destacado,
+    tipo,
+    avaliacao,
+    descricao,
+    capa
+  } = restaurant
+
+  return (
     <S.Card>
-        <img src={image} alt={title} />
-        <S.Infos>
-            <Tag>
-                {infos}
-            </Tag>
-            {star && (
-                <Tag>
-                    {star}
-                </Tag>
-            )}
-        </S.Infos>
-        <S.ContainerInfos>
-            <div>
-                <div className="capa">
-                    <S.Title>{title}</S.Title>
-                    <div className="nota">
-                        {nota}
-                        <img src={starIcon} alt="Estrela" />
-                    </div>
-                </div>
-                <S.Description>{description}</S.Description>
+      <img src={capa} alt={titulo} />
+
+      <S.Infos>
+        <Tag>{tipo}</Tag>
+        {destacado && <Tag>Destaque</Tag>}
+      </S.Infos>
+
+      <S.ContainerInfos>
+        <div>
+          <div className="capa">
+            <S.Title>{titulo}</S.Title>
+            <div className="nota">
+              {avaliacao}
+              <img src={starIcon} alt="Estrela" />
             </div>
-            <S.ButtonAbout className="about-restaurant" to={`/restaurant/${id}`} title={`Clique aqui para ver o cardápio de ${title}`}>{about}</S.ButtonAbout>
-        </S.ContainerInfos>
+          </div>
+
+          <S.Description>{descricao}</S.Description>
+        </div>
+
+        <S.ButtonAbout
+          to={`/restaurant/${id}`}
+          title={`Clique aqui para ver o cardápio de ${titulo}`}
+        >
+          Saiba mais
+        </S.ButtonAbout>
+      </S.ContainerInfos>
     </S.Card>
-)
+  )
+}
 
 export default Restaurant

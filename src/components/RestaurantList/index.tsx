@@ -14,17 +14,8 @@ const RestaurantList = ({ restaurants, isLoading }: RestaurantsProps) => {
             <div className="container">
                 <S.List>
                     {restaurants.map((rest) => (
-                        <Restaurant
-                            key={rest.id}
-                            title={rest.titulo}
-                            nota={rest.avaliacao}
-                            image={rest.capa}
-                            description={rest.descricao}
-                            star={rest.destacado ? 'Em destaque' : undefined}
-                            infos={rest.tipo}
-                            about='Saiba mais'
-                            id={rest.id}
-                        />
+                        <Restaurant restaurant={rest} />
+
                     ))}
                 </S.List>
             </div>
