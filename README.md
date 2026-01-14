@@ -2,7 +2,7 @@
 
 Este projeto representa o fluxo de um e-commerce de restaurantes, desenvolvido com React, TypeScript e styled-components. O usuário pode visualizar restaurantes, acessar cardápios, adicionar itens ao carrinho e finalizar pedidos com checkout completo.
 
-🔗 [Acesse o e-commerce online](https://efood-six-pearl.vercel.app/)
+🔗 [Acesse o e-commerce online](https://efood-projeto-git-teste-stephanys-projects-08919338.vercel.app/)
 
 ---
 
@@ -36,33 +36,6 @@ Este projeto representa o fluxo de um e-commerce de restaurantes, desenvolvido c
 
 ---
 
-## 📁 Estrutura do Projeto
-
-```bash
-efood/
-├── public/
-├── src/
-│   ├── assets/              # Logos, imagens e arquivo de definição de tipos de imagem
-│   ├── components/          # Componentes reutilizáveis
-│   ├── pages/               # Páginas Home e Restaurant
-│   ├── services/            # Requisição da API com RTK Query
-│   ├── store/               # Store contendo os reducers e middlewares
-│   │   └── reducers/        # Reducer do carrinho (adicionar, remover, abrir aside, avançar etapas, limpar fluxo)
-│   ├── styles/              # Estilos globais e arquivo de cores
-│   ├── utils/               # Função de conversão de moeda para BRL
-│   ├── App.tsx              # Definição do app
-│   ├── index.tsx            # Ponto de entrada do app
-│   ├── routes.tsx           # Rotas do React Router
-│   └── types.d.ts           # Arquivos de declaração de tipos (todos os tipos utilizados no projeto estão aqui)
-├── .gitignore
-├── .hintrc
-├── package-lock.json
-├── package.json
-├── README.md
-└── tsconfig.json
-
-```
-
 ---
 
 ## 📌 Como rodar localmente
@@ -70,7 +43,7 @@ efood/
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/jose-junior1/efood
+git clone https://github.com/stephanycampos/efood_projeto.git
 cd efood
 ```
 2. Instale as dependências:
@@ -98,8 +71,7 @@ cd efood
 ## 🚀 Deploy
 Este projeto está hospedado gratuitamente via Vercel:
 
-🌍 https://efood-six-pearl.vercel.app/
+🌍 https://efood-projeto-git-teste-stephanys-projects-08919338.vercel.app/
 
 ---
 
-> Desenvolvido com 💙 por José Junior
